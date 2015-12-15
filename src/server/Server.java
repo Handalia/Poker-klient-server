@@ -62,32 +62,6 @@ public class Server {
 		}
 	}
 
-//	static class AddPlayer implements HttpHandler {
-//		ServerState state;
-//
-//		public AddPlayer(ServerState state) {
-//			this.state = state;
-//		}
-//		
-//		@Override
-//		public void handle(HttpExchange t) throws IOException {
-//			if (state.numberOfPlayers < 10) {
-//	            String response = String.format("Ok, you are player %d\n", state.numberOfPlayers);
-//	            t.sendResponseHeaders(200, response.length());
-//	            OutputStream os = t.getResponseBody();
-//	            os.write(response.getBytes());
-//	            os.close();
-//	            state.numberOfPlayers++;
-//			} else {
-//				String response = "Sorry, there is no space for you\n";
-//	            t.sendResponseHeaders(200, response.length());
-//	            OutputStream os = t.getResponseBody();
-//	            os.write(response.getBytes());
-//	            os.close();
-//			}
-//		}
-//	}
-
 	static class NewGame extends SimpleHandler {
 
 		public NewGame(ServerState state) {
@@ -105,31 +79,6 @@ public class Server {
 		}
 		
 	}
-//	static class NewGame implements HttpHandler {
-//		ServerState state;
-//		
-//		public NewGame(ServerState state) {
-//			this.state = state;
-//		}
-//
-//		@Override
-//		public void handle(HttpExchange t) throws IOException {
-//			if (state.numberOfPlayers > 2) {
-//	            state.isGameStartedAlready = true;
-//	            String response = "Hurray!\n";
-//	            t.sendResponseHeaders(200, response.length());
-//	            OutputStream os = t.getResponseBody();
-//	            os.write(response.getBytes());
-//	            os.close();
-//			} else {
-//				String response = "Sorry, not enough players\n";
-//	            t.sendResponseHeaders(200, response.length());
-//	            OutputStream os = t.getResponseBody();
-//	            os.write(response.getBytes());
-//	            os.close();
-//			}
-//		}
-//	}
 
 	static class HowManyPlayers extends SimpleHandler {
 
@@ -159,21 +108,3 @@ public class Server {
 		}
 	}
 }
-
-//	static class HowManyPlayers implements HttpHandler {
-//		ServerState state;
-//		
-//		public HowManyPlayers(ServerState state) {
-//			this.state = state;
-//		}
-//
-//		@Override
-//		public void handle(HttpExchange t) throws IOException {
-//            String response = String.format("%d\n", state.numberOfPlayers);
-//            t.sendResponseHeaders(200, response.length());
-//            OutputStream os = t.getResponseBody();
-//            os.write(response.getBytes());
-//            os.close();
-//		}
-//	}
-//}
